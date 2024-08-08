@@ -30,28 +30,28 @@ class CategoriaSeeder extends Seeder
         
         DB::table('categorias')->insert([
             'nombre' => 'Botines',
-            'icono' => 'guantes',
+            'icono' => 'botin',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
         
         DB::table('categorias')->insert([
             'nombre' => 'Guantes',
-            'icono' => 'guantes',
+            'icono' => 'guante',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
         
         DB::table('categorias')->insert([
             'nombre' => 'Canilleras',
-            'icono' => 'canilleras',
+            'icono' => 'canillera',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
         
         DB::table('categorias')->insert([
             'nombre' => 'Accesorios',
-            'icono' => 'accesorios',
+            'icono' => 'accesorio',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
