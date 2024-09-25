@@ -17,6 +17,13 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::apiResource('/pedidos', PedidoController::class);
 });
 
+Route::middleware(['auth:sanctum', 'admin'])->group(function() {
+    Route::get('/admin', function() {
+        return response()->json(['message' => 'Acceso autorizado para administradores']);
+    });
+    Route::apiResource('/admin/productos', ProductoController::class);
+});
+
 Route::apiResource('/categorias', CategoriaController::class );
 Route::apiResource('/productos', ProductoController::class );
 

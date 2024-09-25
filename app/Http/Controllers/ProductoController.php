@@ -12,40 +12,43 @@ class ProductoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        return new ProductoCollection(Producto::where('disponible', 1)->orderBy('id', 'desc')->get());
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function index() //get all
     {
         return new ProductoCollection(Producto::all());
     }
 
     /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request) // create
+    {
+        $producto = Producto::create($request->all());
+        return new ProductoResource($producto);   
+    }
+
+    /**
      * Display the specified resource.
      */
-    public function show(Producto $producto)
+    public function show(Producto $producto) //get by id
     {
-        //
+        return new ProductoResource($producto);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request, Producto $producto) //update
     {
-        //
+        $producto->update($request->all());
+        return new ProductoResource($producto);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Producto $producto)
+    public function destroy(Producto $producto) //delete
     {
-        //
+        $producto->delete();
+        return response()->json(null, 204);
     }
 }
