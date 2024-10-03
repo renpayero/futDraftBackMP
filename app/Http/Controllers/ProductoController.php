@@ -6,6 +6,7 @@ use App\Models\Producto;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\ProductoCollection;
+use App\Http\Resources\ProductoResource;
 
 class ProductoController extends Controller
 {
